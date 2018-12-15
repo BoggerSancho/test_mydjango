@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Lab3</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/mainApp/main.css' %}" type="text/css">
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+
+		<header>
+            <div class="up">
+            </div>
+            <div class="down">
+                <img src="https://78.media.tumblr.com/e1dbdcb4b67d6d9af043effe6f0813d6/tumblr_oshzs0n5511qjb1qgo1_1280.png" alt="" width="100px" height="100px">
+                <p></p>
+                <div>
+
+                </div>
+            </div>
+	    </header>
+	<div class="div-grid">
+		<div class="book_site">
+			<div>
+				<img src="{{books.image}}" alt="">
+			</div>
+			<div id="book_site_id">
+				<p>Название: {{books.bookname}}</p>
+				<p>Оригинальное название: {{books.original_bookname}}</p>
+				<p>Жанр: {{books.genre}}</p>
+				<p>Количество глав: {{books.how_much_charter}} </p>
+                <p>Количество переведенных глав: {{books.how_much_translated}} </p>
+                <p>Кто переводчик: {{books.who_translate}} </p>
+                <p>Дата: {{books.date|date:"Y-m-d"}} </p>
+                <p>Описание: {{books.description}} </p>
+			</div>
+		</div>
+		
+	</div>
+
+	<footer></footer>
+</html>

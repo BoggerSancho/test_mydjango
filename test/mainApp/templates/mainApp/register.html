@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Lab3</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/mainApp/main.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/mainApp/register.css' %}" type="text/css">
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+</head>
+<body>
+		<header>
+            <div class="up">
+            </div>
+            <div class="down">
+                <img src="https://78.media.tumblr.com/e1dbdcb4b67d6d9af043effe6f0813d6/tumblr_oshzs0n5511qjb1qgo1_1280.png" alt="" width="100px" height="100px">
+                <p></p>
+                <div>
+
+                </div>
+            </div>
+	    </header>
+
+
+
+			<form action="register/" method="post" class="register_form">
+				{% csrf_token %}
+				<h1>Регистрация</h1>
+				<input type="text" name="login" id="login" class="reg_input" size="30" placeholder="Логин" required>
+
+				<input type="text" name="password" id="password" class="reg_input" size="30" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Пароль" required>
+				<input type="email" name="email" id="email" class="reg_input" size="30" placeholder="Почта" required>
+				<input type="text" name="first_name" id="first_name" class="reg_input" size="30" placeholder="Имя (необязательно)">
+				<input type="text" name="last_name" id="last_name" class="reg_input" size="30" placeholder="Фамилия (необязательно)">
+				<input class="button8" type="submit" value="Войти">
+				{% if login_error %}
+				<label>{{login_error}}</label>
+				{% endif %}
+			</form>
+
+
+</body>
+	<footer></footer>
+</html>
